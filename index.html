@@ -2,65 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Family & Asset Protection System: When The Knock Comes, You're Ready</title>
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script src="https://www.digistore24-scripts.com/service/digistore.js"></script>
-    <script type="text/javascript">
-        digistorePromocode( { "product_id": 676499, "adjust_domain": true } );
-    </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        
         body {
             font-family: 'Inter', Arial, sans-serif;
             scroll-behavior: smooth;
+            padding-top: 72px;
         }
-        
+
         .hero-gradient {
             background: linear-gradient(135deg, #1e3a8a 0%, #ffffff 100%);
         }
-        
+
         .cta-primary {
             background-color: #dc2626;
             color: white;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(220, 38, 38, 0.3);
         }
-        
+
         .cta-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(220, 38, 38, 0.4);
         }
-        
+
         .cta-blue {
             background-color: #1e40af;
             color: white;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(30, 64, 175, 0.3);
         }
-        
+
         .cta-blue:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(30, 64, 175, 0.4);
         }
-        
+
+        .cta-light {
+            background-color: #60a5fa;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(96, 165, 250, 0.3);
+        }
+
+        .cta-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(96, 165, 250, 0.4);
+            background-color: #3b82f6;
+        }
+
         .cta-green {
             background-color: #059669;
             color: white;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(5, 150, 105, 0.3);
         }
-        
+
         .cta-green:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(5, 150, 105, 0.4);
         }
-        
+
         .trust-badge {
             background: linear-gradient(135deg, #059669 0%, #047857 100%);
             color: white;
@@ -71,17 +82,17 @@
             align-items: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
+
         .testimonial-card {
             transition: all 0.3s ease;
             flex: 0 0 300px;
             scroll-snap-align: start;
         }
-        
+
         .testimonial-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .testimonial-carousel {
             display: flex;
             overflow-x: auto;
@@ -90,7 +101,7 @@
             padding: 10px 0;
             -webkit-overflow-scrolling: touch;
         }
-        
+
         .feature-icon {
             width: 50px;
             height: 50px;
@@ -100,76 +111,96 @@
             justify-content: center;
             margin-bottom: 15px;
         }
-        
+
         .value-card {
             transition: all 0.3s ease;
         }
-        
+
         .value-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
-        
+
         .guarantee-section {
             background: linear-gradient(135deg, #dcfce7 0%, #ffffff 100%);
         }
-        
+
         .counter {
             animation: countUp 1s ease-out;
         }
-        
+
         @keyframes countUp {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .trust-section {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
-        
+
         .payment-logo {
             height: 30px;
             object-fit: contain;
             filter: grayscale(100%) contrast(0.5);
             transition: all 0.3s ease;
         }
-        
+
         .payment-logo:hover {
             filter: none;
         }
-        
+
+        .payment-logos-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .payment-logo--sm {
+            height: 22px !important;
+            filter: none !important;
+        }
+
+        .payment-logo--lg {
+            height: 34px !important;
+            filter: none !important;
+        }
+
         .ssl-badge {
             font-size: 0.75rem;
             padding-top: 4px;
         }
-        
+
         .ssl-badge i {
             font-size: 0.9em;
             margin-right: 4px;
         }
-        
+
         .warning-box {
             border-left: 4px solid #dc2626;
             background-color: #fef2f2;
         }
-        
+
         .control-box {
             border-left: 4px solid #059669;
             background-color: #f0fdf4;
         }
-        
+
         .fact-box {
             border-left: 4px solid #b91c1c;
             background: linear-gradient(145deg, #fee2e2 0%, #fff5f5 100%);
             box-shadow: 0 10px 15px -3px rgba(185, 28, 28, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        
+
         .last-section {
             background: linear-gradient(145deg, #0b1e3a 0%, #1a2f4f 50%, #2a3f5f 100%);
             position: relative;
             overflow: hidden;
             color: #f0f4fa;
         }
+
         .last-section::before {
             content: "";
             position: absolute;
@@ -181,10 +212,12 @@
             background-size: cover;
             pointer-events: none;
         }
+
         .last-section .content {
             position: relative;
             z-index: 2;
         }
+
         .last-section .cta-glow {
             background: linear-gradient(145deg, #fbbf24, #f59e0b);
             color: #0b1e3a;
@@ -193,110 +226,282 @@
             transition: all 0.3s ease;
             border: none;
         }
+
         .last-section .cta-glow:hover {
             transform: scale(1.05);
             box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.7);
             background: linear-gradient(145deg, #fcd34d, #fbbf24);
         }
+
         .category-card {
             background: rgba(255,255,255,0.08);
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255,215,0,0.2);
             transition: all 0.2s ease;
         }
+
         .category-card:hover {
             border-color: rgba(255,215,0,0.5);
             background: rgba(255,255,255,0.12);
         }
+
         .last-section .badge-icon {
             background: rgba(255,255,255,0.1);
             border-radius: 40px;
             padding: 0.25rem 0.75rem;
             backdrop-filter: blur(4px);
         }
+
         .bonus-list-item {
             display: flex;
             align-items: center;
             padding: 0.5rem 0;
             border-bottom: 1px dashed #e5e7eb;
         }
+
         .bonus-list-item:last-child {
             border-bottom: none;
         }
 
-        /* FIX: Ensure vertical scrolling works through the iframe */
+        .fixed-checkout-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+            padding: 10px 14px;
+        }
+
+        .checkout-badge-btn {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 8px 14px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .checkout-badge-btn:hover {
+            background: #f8fafc;
+        }
+
+        .checkout-modal-card {
+            width: 100%;
+            max-width: 560px;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.24);
+            overflow: hidden;
+        }
+
+        .checkout-icon-badge {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: #ecfdf5;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #059669;
+            font-size: 1.25rem;
+        }
+
         .book-preview-section iframe {
             touch-action: pan-y !important;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 42rem;
         }
 
         @media (max-width: 640px) {
-            body { font-size: 14px; }
-            .container { padding-left: 0.75rem; padding-right: 0.75rem; }
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
+            body {
+                font-size: 14px;
+                padding-top: 64px;
+            }
+
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .fixed-checkout-badge {
+                padding: 8px 10px;
+            }
+
+            .checkout-badge-btn {
+                gap: 8px;
+                padding: 7px 10px;
+            }
+
+            .payment-logo--sm {
+                height: 20px !important;
+            }
+
+            .payment-logo--lg {
+                height: 30px !important;
+            }
         }
     </style>
 </head>
 <body class="antialiased text-gray-800">
 
-    <section class="trust-section pt-20 pb-16 px-4">
+    <div class="fixed-checkout-badge">
+        <button type="button" id="openTrustModal" class="checkout-badge-btn" aria-haspopup="dialog" aria-controls="whopTrustModal">
+            <span class="text-blue-700 text-2xl leading-none"><i class="fas fa-circle-check"></i></span>
+            <div class="text-left leading-tight">
+                <div class="text-2xl font-extrabold text-gray-800 tracking-tight">whop</div>
+                <div class="text-[11px] sm:text-xs font-semibold text-gray-700 tracking-[0.18em] uppercase">United States Secure Order</div>
+            </div>
+            <span class="text-amber-500 text-3xl leading-none ml-1"><i class="fas fa-lock"></i></span>
+        </button>
+    </div>
+
+    <div id="whopTrustModal" class="hidden fixed inset-0 z-[60] items-center justify-center px-4">
+        <div class="absolute inset-0 bg-black/55" id="trustModalBackdrop"></div>
+        <div class="checkout-modal-card relative z-10">
+            <div class="bg-white px-6 py-5 border-b border-gray-200 flex items-start justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="checkout-icon-badge">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-gray-900">Whop Secure Checkout</p>
+                        <p class="text-sm text-gray-500">United States</p>
+                    </div>
+                </div>
+                <button type="button" id="closeTrustModal" class="text-gray-400 hover:text-gray-700 text-2xl leading-none" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="px-6 py-6">
+                <h3 class="text-2xl font-light text-gray-900 mb-4">SECURE ORDER</h3>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <p><strong>Maria offers this product through Whop.</strong></p>
+                    <p>You can purchase with confidence knowing your checkout is processed securely through Whop when you use any order button on this page.</p>
+                    <p>If you need help with your order, support resources are available through the checkout flow and seller support channels.</p>
+                </div>
+
+                <div class="mt-6">
+                    <button type="button" id="gotItTrustModal" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition">
+                        Got it
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="trust-section pt-8 md:pt-10 pb-16 px-4">
         <div class="container mx-auto max-w-6xl">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <div class="bg-green-100 text-green-800 font-semibold py-2 px-4 rounded-full inline-flex items-center text-sm mb-6">
                         <i class="fas fa-shield-alt mr-2"></i>Protection System Bought by 2,847+ People
                     </div>
-                    
+
                     <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
                         When The Knock Comes, <br>
                         <span class="text-blue-800">Will Your Family Be Protected?</span>
                     </h1>
-                    
+
                     <div class="text-xl mb-6 space-y-4">
                         <p><strong>Your home, your business, your children's safety</strong> - everything you've built in 10+ years could vanish in 24 hours under current enforcement.</p>
                     </div>
-                    
+
                     <div class="fact-box p-5 rounded-lg mb-6">
                         <div class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-red-600 mr-3 mt-1 text-xl"></i>
                             <div>
-                                <p class="font-bold text-red-800">Fact: Street arrests increased 600% in 2025. 70% of detainees have no criminal record.</p>
-                                <p class="text-sm text-red-700 mt-1">(Source: Deportation Data Project, ICE Statistics 2025)</p>
+                                <p class="font-bold text-red-800">Fact: Street arrests increased 600% in 2025-26. 70% of detainees have no criminal record.</p>
+                                <p class="text-sm text-red-700 mt-1">(Source: Deportation Data Project, ICE Statistics 2025-26)</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mb-8 space-y-4">
-                        <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i><div><span class="font-bold">Stop Asset Seizure Before It Happens</span><p class="text-sm text-gray-600">Legally protect your home, business, and savings from forfeiture</p></div></div>
-                        <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i><div><span class="font-bold">Prevent Family Separation</span><p class="text-sm text-gray-600">Emergency guardianship systems that work when you can't be there</p></div></div>
-                        <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i><div><span class="font-bold">Avoid $10,000+ Legal Traps</span><p class="text-sm text-gray-600">Spot notario fraud and predatory contracts that target desperate families</p></div></div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <div>
+                                <span class="font-bold">Stop Asset Seizure Before It Happens</span>
+                                <p class="text-sm text-gray-600">Legally protect your home, business, and savings from forfeiture</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <div>
+                                <span class="font-bold">Prevent Family Separation</span>
+                                <p class="textsm text-gray-600">Emergency guardianship systems that work when you can't be there</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <div>
+                                <span class="font-bold">Avoid $10,000+ Legal Traps</span>
+                                <p class="text-sm text-gray-600">Spot notario fraud and predatory contracts that target desperate families</p>
+                            </div>
+                        </div>
                     </div>
-                    
+
                     <div class="md:hidden mb-8">
                         <div class="relative">
-                            <a href="https://ibb.co/qzbvzYB" target="_blank">
-                                <img src="images/family.jpg" alt="Family protection" class="rounded-xl shadow-2xl w-full">
+                            <a href="/images/family.jpg">
+                                <img src="/images/family.jpg" alt="Family protection image" class="rounded-xl shadow-2xl w-full hero-image" fetchpriority="high" loading="eager" decoding="async">
                             </a>
                         </div>
                     </div>
-                    
+
+                    <p class="italic text-gray-600 mb-8">"58% of mixed-status families avoid medical care due to status fears. 4.1 million U.S. citizen children could face separation. This isn't hypothetical - it's happening now."</p>
+
                     <div class="text-center mb-6">
-                        <div class="mb-3">
-                            <span class="inline-block bg-green-100 text-green-800 font-bold py-1 px-3 rounded-full text-sm">Save $10,000+ in Legal Mistakes</span>
-                        </div>
-                        <a href="https://www.checkout-ds24.com/product/679648" class="cta-primary font-bold py-4 px-8 rounded-lg text-center inline-block text-xl">SECURE MY PROTECTION SYSTEM - $47</a>
-                        <div class="flex items-center justify-center gap-4 mt-4">
-                            <img src="images/visa.svg" alt="Visa" class="payment-logo h-16" style="filter: none;">
-                            <img src="images/mastercard.svg" alt="Mastercard" class="payment-logo h-16" style="filter: none;">
-                            <img src="images/applepay.svg" alt="Apple Pay" class="payment-logo h-16" style="filter: none;">
-                            <img src="images/paypal.svg" alt="PayPal" class="payment-logo h-16" style="filter: none;">
+                        <p class="text-green-700 font-bold mb-3 text-sm">Save $10,000+ in Legal Mistakes</p>
+                        <a href="https://whop.com/checkout/plan_043u2Mataj4gt" class="cta-primary font-bold py-4 px-8 rounded-lg text-center inline-block text-xl">
+                            SECURE MY PROTECTION SYSTEM - $47
+                        </a>
+                        <div class="payment-logos-row" aria-label="Accepted payment methods">
+                            <img src="/images/mastercard.svg" alt="Mastercard" class="payment-logo payment-logo--sm">
+                            <img src="/images/visa.svg" alt="Visa" class="payment-logo payment-logo--lg">
+                            <img src="/images/paypal.svg" alt="PayPal" class="payment-logo payment-logo--sm">
+                            <img src="/images/applepay.svg" alt="Apple Pay" class="payment-logo payment-logo--lg">
                         </div>
                     </div>
+
+                    <p class="text-center text-gray-600">100% Risk-Free: 30-Day Money-Back Guarantee</p>
+
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 text-center mt-6">
+                        <p class="text-sm font-medium text-blue-800">
+                            <i class="fas fa-exclamation-circle mr-2"></i>
+                            <strong>Critical:</strong> The "2-Year Rule" means you could be deported in 24 hours without proof of residence. Are you carrying the right documents?
+                        </p>
+                        <p class="font-bold text-blue-900 mt-2">We got this covered</p>
+                    </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center hidden md:block">
+
+                <div class="md:w-1/2 justify-center hidden md:flex">
                     <div class="relative">
-                        <a href="https://ibb.co/qzbvzYB" target="_blank">
-                            <img src="images/family.jpg" alt="Family protection" class="rounded-xl shadow-2xl w-full max-w-md">
+                        <a href="/images/family.jpg">
+                            <img src="/images/family.jpg" alt="Family protection image" class="rounded-xl shadow-2xl w-full max-w-xl hero-image" fetchpriority="high" loading="eager" decoding="async">
                         </a>
                     </div>
                 </div>
@@ -304,47 +509,196 @@
         </div>
     </section>
 
-    <section class="py-12 px-4 bg-gray-50 border-t border-b border-gray-200 book-preview-section">
+    <section class="book-preview-section py-12 px-4 bg-gray-50 border-t border-b border-gray-200">
         <div class="container mx-auto max-w-4xl">
             <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">📖 Book Preview</h2>
             <div class="relative w-full h-[300px] md:h-[500px] rounded-lg overflow-hidden shadow-xl">
-                <iframe src="https://simplebooklet.com/embed.php?wpKey=GUnqa8uCDlFc9Yh8V0RJ51&source=embed" 
-                        allowfullscreen 
-                        class="absolute top-0 left-0 w-full h-full"
-                        style="border: 0; overflow: hidden;"></iframe>
+                <iframe
+                    src="https://simplebooklet.com/embed.php?wpKey=GUnqa8uCDlFc9Yh8V0RJ51&source=embed"
+                    allowfullscreen
+                    loading="lazy"
+                    title="Book preview"
+                    class="absolute top-0 left-0 w-full h-full"
+                    style="border: 0; overflow: hidden;"></iframe>
             </div>
             <p class="text-center text-gray-600 mt-4 text-sm">Flip through the book's preview — you'll have an idea what's inside</p>
         </div>
     </section>
 
-    <script>
-        // JS Fix to ensure vertical scrolling works over the iframe on mobile devices
-        document.addEventListener('DOMContentLoaded', function() {
-            const iframe = document.querySelector('.book-preview-section iframe');
-            if (!iframe) return;
+    <section class="py-8 bg-white border-t border-b border-gray-200">
+        <div class="container mx-auto max-w-6xl px-4">
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                <p class="text-sm text-gray-600 font-medium">System validated against current 2026 enforcement data:</p>
+                <div class="flex flex-wrap justify-center gap-4 items-center">
+                    <div class="bg-gray-100 px-4 py-2 rounded-full text-xs font-semibold text-gray-700 flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>ICE Enforcement Patterns
+                    </div>
+                    <div class="bg-gray-100 px-4 py-2 rounded-full text-xs font-semibold text-gray-700 flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>Asset Protection Law
+                    </div>
+                    <div class="bg-gray-100 px-4 py-2 rounded-full text-xs font-semibold text-gray-700 flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>Family Court Protocols
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            let startX, startY;
+    <section class="py-20 bg-white px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">The <span class="text-red-600">Silent Crisis</span> No One Talks About</h2>
 
-            iframe.addEventListener('touchstart', function(e) {
-                startX = e.touches[0].clientX;
-                startY = e.touches[0].clientY;
-            }, { passive: true });
+            <div class="space-y-6 mb-10">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <p class="font-bold mb-2">Right now, you're in what researchers call "The Asset Trap":</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Your $300,000 home could be seized because you can't make payments from detention</li>
+                        <li>Your business equipment could be liquidated at 50% value in a "fire sale"</li>
+                        <li>Your U.S. citizen children could enter foster care within 24 hours if you're detained</li>
+                        <li>Your bank accounts could be frozen, leaving your family without resources</li>
+                    </ul>
+                </div>
 
-            iframe.addEventListener('touchmove', function(e) {
-                if (!startX || !startY) return;
-                
-                const deltaX = Math.abs(e.touches[0].clientX - startX);
-                const deltaY = Math.abs(e.touches[0].clientY - startY);
+                <p>When I faced deportation, my biggest fear wasn't leaving the country. It was what would happen to:</p>
 
-                // If user is swiping vertically (deltaY > deltaX), 
-                // we do nothing here which allows the browser to scroll the page normally.
-                // If the movement is primarily horizontal, SimpleBooklet handles the page turn.
-                if (deltaY > deltaX && deltaY > 10) {
-                    // This encourages the touch event to propagate to the parent page for scrolling
-                }
-            }, { passive: true });
-        });
-    </script>
-</body>
-</html>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <p class="font-bold text-red-700">1. My Home</p>
+                        <p class="text-sm">Mortgage default in 30 days. Foreclosure in 90. Years of equity gone.</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <p class="font-bold text-red-700">2. My Children</p>
+                        <p class="text-sm">Who picks them up from school? Who has legal authority to care for them?</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="space-y-4 mb-12">
+                <div class="flex items-start">
+                    <span class="text-red-500 mr-3 text-xl">⚠️</span>
+                    <div>
+                        <span class="font-medium">"Liquidators" holding $6.6 trillion in housing wealth face immediate liquidity crisis upon detention</span>
+                        <p class="text-sm text-gray-600">(Forensic Intelligence Report 2026)</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-red-500 mr-3 text-xl">⚠️</span>
+                    <div>
+                        <span class="font-medium">Release rates dropped from 16% to 3%. Once detained, you're likely staying detained.</span>
+                        <p class="text-sm text-gray-600">(ICE Statistics 2025-2026)</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-red-500 mr-3 text-xl">⚠️</span>
+                    <div>
+                        <span class="font-medium">48% of undocumented immigrants avoid medical care due to status fears, creating public health risks</span>
+                        <p class="text-sm text-gray-600">(Behavioral Systems Mapping 2026)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 mb-10">
+                <h3 class="text-2xl font-bold text-center mb-6">ICE can't Destroy everything, but You unknowingly Might</h3>
+                <div class="bg-gray-200 rounded-lg overflow-hidden shadow-xl">
+                    <div class="sp-embed-player" data-id="cOnDqcn00xj" data-aspect-ratio="1.927711" data-padding-top="51.875000%" style="position:relative;width:100%;padding-top:51.875000%;height:0;">
+                        <script src="https://go.screenpal.com/player/appearance/cOnDqcn00xj"></script>
+                        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" scrolling="no" loading="lazy" src="https://go.screenpal.com/player/cOnDqcn00xj?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1" allowfullscreen="true"></iframe>
+                    </div>
+                </div>
+                <p class="text-center text-gray-700 mt-4 italic">i have covered this especially, in details</p>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-lg mb-8 control-box">
+                <h3 class="font-bold text-green-800 text-lg mb-3">Here's What Changes When You Take Control:</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                        <span>Your home has legal protection against immediate seizure</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                        <span>Your children have designated guardians with legal authority</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                        <span>Your business can continue operating through proper power of attorney</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                        <span>You know exactly what to do in the first 24 hours of any enforcement encounter</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-center">
+                <a href="https://whop.com/checkout/plan_043u2Mataj4gt" class="cta-primary font-bold py-4 px-8 rounded-lg text-center inline-block">
+                    Claim My Safety and Clarity Now
+                </a>
+                <p class="mt-3 text-gray-600">The $47 you spend today could protect $300,000 in home equity tomorrow</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-100 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-6">Why I'm Warning You About "Notarios" & Fake Lawyers</h2>
+
+            <div class="mb-10">
+                <p class="text-center text-gray-600 mb-8">I lost $4,200 to a "notario" who promised me "special connections." He filed fraudulent asylum applications that nearly got me permanently banned from the U.S.</p>
+
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h3 class="font-bold text-red-600 text-xl mb-4">Scam Alert: Current Patterns Targeting Our Community</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-bold">"Notario Público" Fraud</p>
+                                <p class="text-sm text-gray-600">In Latin America, "notario" means lawyer. Here, they're just signature witnesses. They charge $6,000-$15,000 for worthless paperwork.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-bold">ICE Impersonation Scams</p>
+                                <p class="text-sm text-gray-600">Phone calls demanding $1,000-$10,000 to "avoid arrest." Real ICE doesn't call for money.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-bold">"Special Programs" That Don't Exist</p>
+                                <p class="text-sm text-gray-600">WhatsApp messages about "new amnesty" or "work permit shortcuts" - all fake.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="font-bold text-blue-800 text-lg mb-3">⚠️ Critical Distinction:</h3>
+                    <p><strong>"Notario Público" in the U.S.</strong> = Can only witness signatures. <strong>NOT</strong> a lawyer.</p>
+                    <p><strong>Only licensed attorneys or DOJ-accredited representatives</strong> can give legal advice.</p>
+                    <p class="mt-3 text-sm">73 immigrants in LA were scammed by one operator. $222,793 in restitution ordered, but victims were still deported due to fraudulent filings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-2">Customer reviews:</h2>
+            <p class="text-center text-gray-600 mb-8">Don't just take my words</p>
+
+            <div class="testimonial-carousel mb-12">
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <img src="https://i.ibb.co/gZCCKmWm/Gabriel-Torres.jpg" alt="Gabriel Torres" class="w-12 h-12 rounded-full mr-4 object-cover" loading="lazy" decoding="async">
+                        <div>
+                            <p class="font-bold">Gabriel Torres</p>
+                            <p class="text-sm text-gray-500">Houston, TX</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-2">
+                        <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star
