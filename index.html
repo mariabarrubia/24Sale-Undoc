@@ -100,30 +100,37 @@
 
         .trust-popup-content {
             background: white;
-            max-width: 500px;
+            max-width: 450px;
             width: 100%;
-            border-radius: 12px;
-            padding: 32px;
+            border-radius: 8px;
+            padding: 0;
             position: relative;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        .trust-popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .trust-popup-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
             background: none;
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #6b7280;
+            color: #9ca3af;
             width: 32px;
             height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            border-radius: 4px;
             transition: all 0.2s;
+            padding: 0;
         }
 
         .trust-popup-close:hover {
@@ -131,32 +138,31 @@
             color: #111827;
         }
 
-        .trust-icon-large {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
+        .trust-popup-body {
+            padding: 32px 24px;
+            text-align: center;
         }
 
-        .got-it-btn {
-            background-color: #2563eb;
-            color: white;
-            padding: 12px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 20px;
-            transition: all 0.2s;
+        .trust-lock-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            color: #fbbf24;
         }
 
-        .got-it-btn:hover {
-            background-color: #1d4ed8;
+        .trust-popup-body h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .trust-popup-body p {
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 12px;
         }
 
         .testimonial-card {
@@ -341,13 +347,15 @@
         }
 
         .book-preview-section {
-            touch-action: pan-y !important;
+            touch-action: pan-y pinch-zoom !important;
+            -webkit-overflow-scrolling: touch;
         }
 
         .book-preview-section iframe {
-            touch-action: pan-y !important;
+            touch-action: pan-y pinch-zoom !important;
         }
     </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body class="antialiased text-gray-800">
@@ -376,38 +384,30 @@
     <!-- Trust Popup -->
     <div id="trustPopup" class="trust-popup" onclick="closeTrustPopup(event)">
         <div class="trust-popup-content" onclick="event.stopPropagation()">
-            <button class="trust-popup-close" onclick="closeTrustPopup()">×</button>
-
-            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <div class="trust-icon-large">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2563eb;">
-                        <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-
-                <h3 style="font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 8px;">Secure Order Verified</h3>
-
-                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 16px; margin-bottom: 20px; width: 100%;">
-                    <p style="color: #166534; font-size: 14px; font-weight: 600; margin: 0;">
-                        <i class="fas fa-check-circle" style="margin-right: 6px;"></i>
-                        Maria is approved by Whop for offering this product
-                    </p>
-                </div>
-
-                <p style="color: #4b5563; font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
-                    You can purchase with confidence knowing that <strong>Whop will handle the checkout securely</strong>. Your payment information is encrypted and protected.
+            <div class="trust-popup-header">
+                <svg width="80" height="24" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 12C0 5.373 5.373 0 12 0h56c6.627 0 12 5.373 12 12s-5.373 12-12 12H12C5.373 24 0 18.627 0 12z" fill="#111827"/>
+                    <text x="8" y="17" font-family="Arial" font-size="12" font-weight="700" fill="white">Whop</text>
+                </svg>
+                <button class="trust-popup-close" onclick="closeTrustPopup()">×</button>
+            </div>
+            
+            <div class="trust-popup-body">
+                <svg class="trust-lock-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="11" width="14" height="10" rx="2" fill="#fbbf24" fill-opacity="0.2" stroke="#fbbf24" stroke-width="2"/>
+                    <path d="M7 11V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V11" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="12" cy="16" r="1" fill="#fbbf24"/>
+                </svg>
+                
+                <h3>SECURE ORDER</h3>
+                
+                <p style="font-weight: 500; color: #111827; margin-bottom: 16px;">
+                    Whop is the reseller for Maria.
                 </p>
-
-                <div style="background: #eff6ff; border-radius: 8px; padding: 16px; width: 100%; margin-bottom: 8px;">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px;">
-                        <i class="fas fa-headset" style="color: #2563eb; font-size: 18px;"></i>
-                        <span style="font-weight: 600; color: #1e40af;">24/7 Support Available</span>
-                    </div>
-                    <p style="color: #3b82f6; font-size: 13px; margin: 0;">Our support team is at your disposal anytime you need assistance.</p>
-                </div>
-
-                <button class="got-it-btn" onclick="closeTrustPopup()">Got It</button>
+                
+                <p style="color: #6b7280; font-size: 14px;">
+                    You can order in confidence, knowing that Whop's customer support is here to help you along the way if needed.
+                </p>
             </div>
         </div>
     </div>
@@ -488,8 +488,8 @@
                         <!-- Payment Icons - Big Size -->
                         <div class="flex items-center justify-center mt-4 gap-4">
                             <img src="/images/mastercard.svg" alt="Mastercard" class="payment-logo" style="height: 48px; filter: none;">
-                            <img src="/images/visa.svg" alt="Visa" class="payment-logo" style="height: 48px; filter: none;">
-                            <img src="/images/paypal.svg" alt="PayPal" class="payment-logo" style="height: 48px; filter: none;">
+                            <img src="/images/visa.svg" alt="Visa" class="payment-logo" style="height: 56px; filter: none;">
+                            <img src="/images/paypal.svg" alt="PayPal" class="payment-logo" style="height: 56px; filter: none;">
                             <img src="/images/applepay.svg" alt="Apple Pay" class="payment-logo" style="height: 48px; filter: none;">
                         </div>
                     </div>
@@ -521,7 +521,7 @@
                 <iframe src="https://simplebooklet.com/embed.php?wpKey=GUnqa8uCDlFc9Yh8V0RJ51&source=embed" 
                         allowfullscreen 
                         class="absolute top-0 left-0 w-full h-full"
-                        style="border: 0; overflow: hidden; touch-action: pan-y;" 
+                        style="border: 0; overflow: hidden;" 
                         scrolling="no"></iframe>
             </div>
             <!-- Updated text below book preview -->
@@ -545,6 +545,126 @@
                         <i class="fas fa-check-circle text-green-500 mr-2"></i>Family Court Protocols
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Get Inside Section (Moved Up) -->
+    <section id="whats-inside" class="py-20 bg-blue-50 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Your Complete Family & Asset Protection System</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Not just information. Actual working systems tested against 2026 enforcement reality.</p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="value-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-blue-500 text-3xl mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-800">Asset Protection Blueprint</h3>
+                    <p class="text-gray-600 mb-4">Step-by-step guide to legally shield your home, business, and savings from seizure. Includes power of attorney templates, nominee ownership warnings, and foreclosure prevention checklist.</p>
+                    <div class="text-right">
+                        <span class="text-xl font-bold text-gray-500">Prevents $100,000+ in losses</span>
+                    </div>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-green-500 text-3xl mb-4">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-800">Family Safety Protocol</h3>
+                    <p class="text-gray-600 mb-4">Emergency guardianship documents schools and hospitals actually accept. Includes state-specific forms, caregiver authorization affidavits, and "go-bag" checklist that works.</p>
+                    <div class="text-right">
+                        <span class="text-xl font-bold text-gray-500">Prevents CPS/foster care entry</span>
+                    </div>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-red-500 text-3xl mb-4">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-800">Enforcement Response System</h3>
+                    <p class="text-gray-600 mb-4">Exactly what to do during traffic stops, home encounters, and workplace visits. Scripts, document requirements, and how to exercise rights without triggering expedited removal.</p>
+                    <div class="text-right">
+                        <span class="text-xl font-bold text-gray-500">Based on 2025-2026 ICE tactics</span>
+                    </div>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-purple-500 text-3xl mb-4">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-800">Document & Proof System</h3>
+                    <p class="text-gray-600 mb-4">What to carry to prove 2+ years residence (to avoid expedited removal). What NOT to carry. Digital and physical document organization that actually works in crisis.</p>
+                    <div class="text-right">
+                        <span class="text-xl font-bold text-gray-500">The "24-hour deportation" shield</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-md mb-8">
+                <h3 class="text-2xl font-bold mb-6 text-center">Crafted into these Immediate Action Formats</h3>
+
+                <div class="space-y-3 max-w-xl mx-auto">
+                    <div class="bonus-list-item flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                        <span class="flex-1"><strong>The Core Ebook (140+ Pages)</strong></span>
+                        <span class="font-bold text-gray-700">$199 Value</span>
+                    </div>
+                    <div class="bonus-list-item flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                        <span class="flex-1"><strong>Video Overview</strong></span>
+                        <span class="font-bold text-gray-700">$75 Value</span>
+                    </div>
+                    <div class="bonus-list-item flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                        <span class="flex-1"><strong>Exclusive Podcast Episode</strong></span>
+                        <span class="font-bold text-gray-700">$97 Value</span>
+                    </div>
+                    <div class="bonus-list-item flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                        <span class="flex-1"><strong>Resource Website Access</strong></span>
+                        <span class="font-bold text-gray-700">$79 Value</span>
+                    </div>
+                    <div class="bonus-list-item flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                        <span class="flex-1"><strong>Community Support Network</strong></span>
+                        <span class="font-bold text-gray-700">$149 Value</span>
+                    </div>
+                    <div class="bonus-list-item flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                        <span class="flex-1"><strong>Ebooks & Official Materials</strong> – <span class="text-green-600 font-bold">FREE</span></span>
+                        <span class="font-bold text-gray-700"><span class="line-through">$75</span> FREE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Protection Value Card - 4th Buy Button -->
+            <div class="bg-white p-8 rounded-xl shadow-md text-center max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4">Total Protection Value: $599 Or <span class="line-through text-gray-500">PRICELESS</span></h3>
+                <p class="text-gray-600 mb-6">What's your home equity worth? Your business? Your children's safety?</p>
+
+                <!-- Save $10k above button -->
+                <div class="mb-3">
+                    <span class="inline-block bg-green-100 text-green-800 font-bold py-2 px-4 rounded-full text-sm">
+                        Save $10,000+ in Legal Mistakes
+                    </span>
+                </div>
+
+                <div class="text-center mb-2">
+                    <a href="https://whop.com/checkout/plan_043u2Mataj4gt" class="cta-blue font-bold py-4 px-8 rounded-lg text-center inline-block">
+                        CLAIM IT All NOW – $47
+                    </a>
+                </div>
+
+                <!-- Payment Icons Below 4th Button -->
+                <div class="flex items-center justify-center mt-4 gap-4">
+                    <img src="/images/mastercard.svg" alt="Mastercard" class="payment-logo" style="height: 48px; filter: none;">
+                    <img src="/images/visa.svg" alt="Visa" class="payment-logo" style="height: 56px; filter: none;">
+                    <img src="/images/paypal.svg" alt="PayPal" class="payment-logo" style="height: 56px; filter: none;">
+                    <img src="/images/applepay.svg" alt="Apple Pay" class="payment-logo" style="height: 48px; filter: none;">
+                </div>
+
+                <p class="text-gray-600 mt-4">100% Risk Free • Lifetime Access • Money-Back Guarantee</p>
             </div>
         </div>
     </section>
@@ -849,126 +969,6 @@
         </div>
     </section>
 
-    <!-- What You'll Get Inside Section -->
-    <section id="whats-inside" class="py-20 bg-blue-50 px-4">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Your Complete Family & Asset Protection System</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Not just information. Actual working systems tested against 2026 enforcement reality.</p>
-
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="value-card bg-white p-8 rounded-xl shadow-md">
-                    <div class="text-blue-500 text-3xl mb-4">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-blue-800">Asset Protection Blueprint</h3>
-                    <p class="text-gray-600 mb-4">Step-by-step guide to legally shield your home, business, and savings from seizure. Includes power of attorney templates, nominee ownership warnings, and foreclosure prevention checklist.</p>
-                    <div class="text-right">
-                        <span class="text-xl font-bold text-gray-500">Prevents $100,000+ in losses</span>
-                    </div>
-                </div>
-
-                <div class="value-card bg-white p-8 rounded-xl shadow-md">
-                    <div class="text-green-500 text-3xl mb-4">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-blue-800">Family Safety Protocol</h3>
-                    <p class="text-gray-600 mb-4">Emergency guardianship documents schools and hospitals actually accept. Includes state-specific forms, caregiver authorization affidavits, and "go-bag" checklist that works.</p>
-                    <div class="text-right">
-                        <span class="text-xl font-bold text-gray-500">Prevents CPS/foster care entry</span>
-                    </div>
-                </div>
-
-                <div class="value-card bg-white p-8 rounded-xl shadow-md">
-                    <div class="text-red-500 text-3xl mb-4">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-blue-800">Enforcement Response System</h3>
-                    <p class="text-gray-600 mb-4">Exactly what to do during traffic stops, home encounters, and workplace visits. Scripts, document requirements, and how to exercise rights without triggering expedited removal.</p>
-                    <div class="text-right">
-                        <span class="text-xl font-bold text-gray-500">Based on 2025-2026 ICE tactics</span>
-                    </div>
-                </div>
-
-                <div class="value-card bg-white p-8 rounded-xl shadow-md">
-                    <div class="text-purple-500 text-3xl mb-4">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-blue-800">Document & Proof System</h3>
-                    <p class="text-gray-600 mb-4">What to carry to prove 2+ years residence (to avoid expedited removal). What NOT to carry. Digital and physical document organization that actually works in crisis.</p>
-                    <div class="text-right">
-                        <span class="text-xl font-bold text-gray-500">The "24-hour deportation" shield</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-xl shadow-md mb-8">
-                <h3 class="text-2xl font-bold mb-6 text-center">Crafted into these Immediate Action Formats</h3>
-
-                <div class="space-y-3 max-w-xl mx-auto">
-                    <div class="bonus-list-item flex items-center">
-                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
-                        <span class="flex-1"><strong>The Core Ebook (140+ Pages)</strong></span>
-                        <span class="font-bold text-gray-700">$199 Value</span>
-                    </div>
-                    <div class="bonus-list-item flex items-center">
-                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
-                        <span class="flex-1"><strong>Video Overview</strong></span>
-                        <span class="font-bold text-gray-700">$75 Value</span>
-                    </div>
-                    <div class="bonus-list-item flex items-center">
-                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
-                        <span class="flex-1"><strong>Exclusive Podcast Episode</strong></span>
-                        <span class="font-bold text-gray-700">$97 Value</span>
-                    </div>
-                    <div class="bonus-list-item flex items-center">
-                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
-                        <span class="flex-1"><strong>Resource Website Access</strong></span>
-                        <span class="font-bold text-gray-700">$79 Value</span>
-                    </div>
-                    <div class="bonus-list-item flex items-center">
-                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
-                        <span class="flex-1"><strong>Community Support Network</strong></span>
-                        <span class="font-bold text-gray-700">$149 Value</span>
-                    </div>
-                    <div class="bonus-list-item flex items-center">
-                        <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
-                        <span class="flex-1"><strong>Ebooks & Official Materials</strong> – <span class="text-green-600 font-bold">FREE</span></span>
-                        <span class="font-bold text-gray-700"><span class="line-through">$75</span> FREE</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Total Protection Value Card - 4th Buy Button -->
-            <div class="bg-white p-8 rounded-xl shadow-md text-center max-w-2xl mx-auto">
-                <h3 class="text-2xl font-bold mb-4">Total Protection Value: $599 Or <span class="line-through text-gray-500">PRICELESS</span></h3>
-                <p class="text-gray-600 mb-6">What's your home equity worth? Your business? Your children's safety?</p>
-
-                <!-- Save $10k above button -->
-                <div class="mb-3">
-                    <span class="inline-block bg-green-100 text-green-800 font-bold py-2 px-4 rounded-full text-sm">
-                        Save $10,000+ in Legal Mistakes
-                    </span>
-                </div>
-
-                <div class="text-center mb-2">
-                    <a href="https://whop.com/checkout/plan_043u2Mataj4gt" class="cta-blue font-bold py-4 px-8 rounded-lg text-center inline-block">
-                        CLAIM IT All NOW – $47 One-Time
-                    </a>
-                </div>
-
-                <!-- Payment Icons Below 4th Button -->
-                <div class="flex items-center justify-center mt-4 gap-4">
-                    <img src="/images/mastercard.svg" alt="Mastercard" class="payment-logo" style="height: 48px; filter: none;">
-                    <img src="/images/visa.svg" alt="Visa" class="payment-logo" style="height: 48px; filter: none;">
-                    <img src="/images/paypal.svg" alt="PayPal" class="payment-logo" style="height: 48px; filter: none;">
-                    <img src="/images/applepay.svg" alt="Apple Pay" class="payment-logo" style="height: 48px; filter: none;">
-                </div>
-
-                <p class="text-gray-600 mt-4">100% Risk Free • Lifetime Access • Money-Back Guarantee</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Why This Works Section -->
     <section class="py-20 bg-white px-4">
         <div class="container mx-auto max-w-4xl">
@@ -1049,10 +1049,10 @@
 
                     <div class="flex flex-col items-center">
                         <div class="flex items-center justify-center mb-2 gap-4">
-                            <img src="/images/mastercard.svg" alt="Mastercard" class="payment-logo" style="filter: none;">
-                            <img src="/images/visa.svg" alt="Visa" class="payment-logo" style="filter: none;">
-                            <img src="/images/paypal.svg" alt="PayPal" class="payment-logo" style="filter: none;">
-                            <img src="/images/applepay.svg" alt="Apple Pay" class="payment-logo" style="filter: none;">
+                            <img src="/images/mastercard.svg" alt="Mastercard" class="payment-logo" style="height: 56px; filter: none;">
+                            <img src="/images/visa.svg" alt="Visa" class="payment-logo" style="height: 72px; filter: none;">
+                            <img src="/images/paypal.svg" alt="PayPal" class="payment-logo" style="height: 56px; filter: none;">
+                            <img src="/images/applepay.svg" alt="Apple Pay" class="payment-logo" style="height: 72px; filter: none;">
                         </div>
                         <p class="ssl-badge text-xs text-green-600 font-medium flex items-center justify-center">
                             <i class="fas fa-lock"></i> 256-bit SSL Encryption • Your Privacy Protected
@@ -1101,6 +1101,16 @@
 
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <button class="flex justify-between items-center w-full text-left font-bold text-lg">
+                        <span>How do I access the materials after purchasing?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-600 hidden">
+                        <p class="mb-3"><strong>Immediately</strong> after completing your Secure Checkout, you'll receive an email with download links for all materials. The ebook is in PDF format (readable on any device), the Podcast is in MP3 format, the Video overview, Free resources are all downloadable and you'll get instant access to our private resource website and community forum. <strong>You can access everything on your computer, phone, or tablet.</strong></p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-lg">
                         <span>My home is in my name with an ITIN. Can this really protect it?</span>
                         <i class="fas fa-chevron-down transition-transform duration-300"></i>
                     </button>
@@ -1112,24 +1122,22 @@
 
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <button class="flex justify-between items-center w-full text-left font-bold text-lg">
-                        <span>My children are U.S. citizens. Will schools really accept these guardianship forms?</span>
+                        <span>What happens to my business if I'm deported? I have employees who depend on me.</span>
                         <i class="fas fa-chevron-down transition-transform duration-300"></i>
                     </button>
                     <div class="mt-3 text-gray-600 hidden">
-                        <p class="mb-3"><strong>Yes, if you use the right forms.</strong> We provide state-specific caregiver authorization affidavits (like California's CAA form) that schools and hospitals are legally required to accept.</p>
-                        <p>The key is having the correct notarized documents ready <em>before</em> an emergency. Without them, your children could be held at school or enter the foster care system.</p>
+                        <p class="mb-3">Your business can survive if you set it up right (i've covered in details). First, form an LLC (not an S-Corp-S-Corp dies if you lose status). Then write an Operating Agreement that says what happens if you're "unavailable" (include detention/deportation). Then give a Durable Business Power of Attorney to a manager you trust. They can sign checks, pay employees, file taxes, keep things running. Without this, your business dies in weeks. I've watched it happen. Don't let that be you</p>
                     </div>
                 </div>
 
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <button class="flex justify-between items-center w-full text-left font-bold text-lg">
-                        <span>I've been scammed before. How is this different from a "notario"?</span>
+                        <span>If I get detained, who pays my mortgage?</span>
                         <i class="fas fa-chevron-down transition-transform duration-300"></i>
                     </button>
                     <div class="mt-3 text-gray-600 hidden">
-                        <p class="mb-3"><strong>We don't file paperwork for you.</strong> We don't promise results. We don't claim "special connections."</p>
-                        <p>We give you the actual forms, the step-by-step process, and teach you how to do it yourself or work with a real attorney. Plus, we include a full section on spotting and reporting scams.</p>
-                        <p class="mt-3 font-bold">Remember: Only licensed attorneys or DOJ-accredited representatives can give legal advice. We are neither. We're educators.</p>
+                        <p class="mb-3">You need a Durable Power of Attorney (POA). Now. Not tomorrow.</p>
+                        <p class="mb-3">Pick someone you trust - your wife, a sibling, a grown kid and give them legal authority to access your bank accounts and pay your bills. Without it, your mortgage goes unpaid, late fees stack up, and the bank starts foreclosure. I've seen it happen. A POA costs a few hundred bucks with a lawyer "I shared a way to get it Free" & Get it notarized online at most affordable cost. After done - Give copies to your agent and your bank. Source: https://www.ilrc.org/resources</p>
                     </div>
                 </div>
 
@@ -1262,36 +1270,6 @@
                     }
                 });
             });
-        });
-
-        // Book preview scroll fix for mobile
-        document.addEventListener('DOMContentLoaded', function() {
-            const iframe = document.querySelector('.book-preview-section iframe');
-            if (!iframe) return;
-
-            let startX, startY;
-            let isHorizontalScroll = false;
-
-            iframe.addEventListener('touchstart', function(e) {
-                startX = e.touches[0].clientX;
-                startY = e.touches[0].clientY;
-                isHorizontalScroll = false;
-            }, { passive: false });
-
-            iframe.addEventListener('touchmove', function(e) {
-                if (!startX || !startY) return;
-                const deltaX = Math.abs(e.touches[0].clientX - startX);
-                const deltaY = Math.abs(e.touches[0].clientY - startY);
-
-                if (deltaX > deltaY && deltaX > 10) {
-                    isHorizontalScroll = true;
-                    return;
-                }
-
-                if (deltaY > deltaX && deltaY > 10) {
-                    e.preventDefault();
-                }
-            }, { passive: false });
         });
     </script>
 </body>
